@@ -1,0 +1,16 @@
+mappings:
+  nvim:         ~/.config/nvim
+  starship:     ~/.config/starship.toml     # single file, not dir
+  tmux:         ~/.config/tmux/tmux.conf
+  lazygit:      ~/.config/lazygit
+  lazydocker:   ~/.config/lazydocker
+  btop:         ~/.config/btop
+  fastfetch:    ~/.config/fastfetch
+  git:          ~/.config/git
+  shell:
+    aliases.sh:   ~/.config/shell/aliases.sh
+    exports.sh:   ~/.config/shell/exports.sh
+    hooks.sh:     ~/.config/shell/hooks.sh
+    functions.sh: ~/.config/shell/functions.sh
+    bashrc:       ~/.bashrc
+    zshrc:        ~/.zshrc

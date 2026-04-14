@@ -1,0 +1,20 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Modular shell config
+SHELL_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/shell"
+
+source "$SHELL_CONFIG_DIR/exports.sh"
+source "$SHELL_CONFIG_DIR/aliases.sh"
+source "$SHELL_CONFIG_DIR/functions.sh"
+source "$SHELL_CONFIG_DIR/hooks.sh"
+
+# Bash-specific settings
+shopt -s histappend
+shopt -s checkwinsize
+shopt -s globstar 2>/dev/null
+
+# Autocompletion
+if [[ ! -v BASH_COMPLETION_VERSINFO && -f /usr/share/bash-completion/bash_completion ]]; then
+  source /usr/share/bash-completion/bash_completion
+fi
