@@ -48,6 +48,17 @@ tdl() {
   tmux select-pane -t "$editor_pane"
 }
 
+# Yazi wrapper: cd to last visited directory on exit
+y() {
+  local tmp cwd
+  tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
 # Multi-pane swarm layout
 # Usage: tsl <pane_count> <command>
 tsl() {
