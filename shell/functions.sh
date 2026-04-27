@@ -19,9 +19,6 @@ lip() {
   pgrep -af "ssh.*-L [0-9]+:localhost:[0-9]+" || echo "No active forwards"
 }
 
-# Compression
-compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
-
 # Tmux dev layout: editor + AI + terminal
 # Usage: tdl <ai_command> [second_ai]
 tdl() {
